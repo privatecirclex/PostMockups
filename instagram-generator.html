@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Instagram Post Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body class="insta-theme">
+
+    <div class="page-transition cover">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p style="font-weight: 600; font-size: 16px;">Loading...</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="controls">
+    <a href="index.html" style="text-decoration: none; color: #536471; font-weight: 600; font-size: 14px; margin-bottom: 20px; display: block;">
+    &larr; Back to Home
+</a>
+    <h2>Editor</h2>
+    
+    <div class="input-group">
+        <label>Theme</label>
+        <button id="themeToggle">Toggle Dark Mode</button>
+    </div>
+
+    <div class="input-group">
+        <label>Profile Info</label>
+        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+            <input type="text" id="usernameInput" value="username" placeholder="Username">
+            <input type="text" id="locationInput" value="Location Here" placeholder="Location">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label style="display:inline-flex; align-items:center; gap:8px; cursor:pointer;">
+                <input type="checkbox" id="verifiedCheck" checked> 
+                <span style="font-weight:400; text-transform:none; color: #536471;">Show Verified Badge</span>
+  </label>
+        </div>
+        <input type="file" id="profileInput" accept="image/*">
+    </div>
+
+    <div class="input-group">
+        <label>Post Image</label>
+        <input type="file" id="postImageInput" accept="image/*">
+    </div>
+
+    <div class="input-group">
+        <label>Details</label>
+        <input type="text" id="likesInput" value="6,867" placeholder="Like Count">
+        <textarea id="captionInput" placeholder="Caption...">Enhance your Instagram Post with UI Mockup Psd Templates #instagram #templates</textarea>
+        <input type="text" id="timeInput" value="View all 42 comments" placeholder="Comment Text">
+    </div>
+
+    <button id="downloadBtn">Download Post</button>
+</div>
+
+<div class="preview-area">
+    <div id="instaCard" class="insta-card">
+        
+        <div class="insta-header">
+            <div class="insta-user-info">
+                <img id="displayProfile" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png">
+                <div class="insta-text-col">
+                    <div class="insta-username">
+                        <span id="displayUsername">username</span>
+                        <svg id="verifiedBadge1" class="insta-verified" viewBox="0 0 24 24"><g><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .495.083.965.238 1.4-1.272.65-2.147 2.02-2.147 3.6 0 1.435.71 2.705 1.788 3.45-.492.513-.788 1.205-.788 1.95 0 1.5 1.155 2.76 2.595 2.875.49 1.11 1.575 1.875 2.802 1.875.95 0 1.815-.465 2.31-1.19.46.67 1.34 1.15 2.348 1.15 1.22 0 2.29-.75 2.793-1.84 1.41-.12 2.545-1.33 2.545-2.792 0-.745-.295-1.438-.79-1.95 1.08-.745 1.79-2.015 1.79-3.45z" fill="#3897f0"></path><path d="M9.8 17.2l-4.2-4.2 1.4-1.4 2.8 2.8 6.8-6.8 1.4 1.4-8.2 8.2z" fill="#ffffff"></path></g></svg>
+                    </div>
+                    <span id="displayLocation" class="insta-location editable">Location Here</span>
+                </div>
+            </div>
+            <div class="insta-dots">
+                <svg aria-label="More options" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
+            </div>
+        </div>
+
+        <div class="insta-image-container" id="postImageContainer">
+            <div id="postPlaceholder" class="insta-placeholder">
+                <div class="placeholder-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"></path><polyline points="15 3 21 3 21 9"></polyline><polygon points="21 15 16 10 5 21 21 21"></polygon></svg>
+                </div>
+            </div>
+            <img id="displayPostImage" src="" style="display:none;" alt="Post">
+        </div>
+
+        <div class="insta-actions">
+            <div class="left-actions">
+                <svg id="likeBtn" class="insta-icon red-heart" viewBox="0 0 24 24" style="cursor: pointer;"> <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+               <svg class="insta-icon" viewBox="0 0 24 24"><path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+                <svg class="insta-icon" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></line><polygon points="22 2 15 22 11 13 2 9 22 2" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon></svg>
+            </div>
+            <svg class="insta-icon" viewBox="0 0 24 24"><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>
+ </div>
+
+        <div class="insta-details">
+            <div class="insta-likes"><span id="displayLikes" class="editable">6,867</span> likes</div>
+            <div class="insta-caption">
+                <span class="insta-username-bold">
+                    <span id="displayUsernameCaption">username</span>
+                     <svg id="verifiedBadge2" class="insta-verified" viewBox="0 0 24 24" style="vertical-align: text-bottom; margin-left: 2px;"><g><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .495.083.965.238 1.4-1.272.65-2.147 2.02-2.147 3.6 0 1.435.71 2.705 1.788 3.45-.492.513-.788 1.205-.788 1.95 0 1.5 1.155 2.76 2.595 2.875.49 1.11 1.575 1.875 2.802 1.875.95 0 1.815-.465 2.31-1.19.46.67 1.34 1.15 2.348 1.15 1.22 0 2.29-.75 2.793-1.84 1.41-.12 2.545-1.33 2.545-2.792 0-.745-.295-1.438-.79-1.95 1.08-.745 1.79-2.015 1.79-3.45z" fill="#3897f0"></path><path d="M9.8 17.2l-4.2-4.2 1.4-1.4 2.8 2.8 6.8-6.8 1.4 1.4-8.2 8.2z" fill="#ffffff"></path></g></svg>
+                </span>
+                <span id="displayCaption" class="editable">Enhance your Instagram Post with UI Mockup Psd Templates <span class="hashtag">#instagram</span> <span class="hashtag">#templates</span></span>
+            </div>
+            <div id="displayTime" class="view-comments editable">View all 42 comments</div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <div id="downloadModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Your Post is Ready</h3><button id="closeModal" class="close-icon">&times;</button></div>
+            <div class="modal-body">
+                <div class="preview-container"><img id="modalPreviewImage" alt="Preview"></div>
+                <div class="download-settings">
+                    <div class="setting-group"><label>Filename</label><input type="text" id="fileNameInput" placeholder="insta-post"></div>
+                    <div class="setting-group"><label>Format</label>
+                        <div class="format-toggles">
+                            <label class="radio-label"><input type="radio" name="format" value="png" checked> PNG</label>
+                            <label class="radio-label"><input type="radio" name="format" value="jpg"> JPG</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="progressArea" class="progress-area" style="display: none;"><div class="progress-bar-track"><div id="progressBar" class="progress-bar-fill"></div></div><span id="progressText">Starting...</span></div>
+            </div>
+            <div class="modal-footer"><button id="finalDownloadBtn" class="primary-btn">Download Image</button></div>
+        </div>
+    </div>
+<div id="cropperModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 600px; width: 95%;">
+        <div class="modal-header">
+            <h3 id="cropperTitle">Crop Image</h3>
+            <button id="closeCropper" class="close-icon">&times;</button>
+        </div>
+        <div class="modal-body" style="padding: 0; background: #000; height: 400px; display: flex; align-items: center; justify-content: center;">
+            <img id="imageToCrop" src="" style="max-width: 100%; max-height: 100%; display: block;">
+        </div>
+        <div class="modal-footer" style="justify-content: space-between; margin-top: 15px;">
+            <button id="cancelCropBtn" class="secondary-btn">Cancel</button>
+            <button id="applyCropBtn" class="primary-btn">Apply Crop</button>
+        </div>
+    </div>
+</div>
+
+    <script src="script-insta.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const curtain = document.querySelector('.page-transition');
+            setTimeout(() => { curtain.classList.add('exit'); curtain.classList.remove('cover'); }, 300);
+            document.querySelectorAll('a').forEach(link => { /* Link logic */ });
+        });
+    </script>
+</body>
+</html>

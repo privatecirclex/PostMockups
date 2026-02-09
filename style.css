@@ -1,0 +1,938 @@
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-main: #0f1419;
+    --text-sec: #536471;
+    --border: #eff3f4;
+    --blue: #1d9bf0;
+}
+
+/* Dark Mode Variables */
+.dark-mode-vars {
+    --bg-color: #15202b;
+    --card-bg: #000000;
+    --text-main: #e7e9ea;
+    --text-sec: #71767b;
+    --border: #2f3336;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+
+/* The Main Editor Card */
+.controls {
+    flex: 1;
+    background: #ffffff;
+    padding: 30px; /* More breathing room */
+    border-radius: 20px; /* Softer corners */
+    border: 1px solid #eff3f4; /* Subtle border */
+    box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.08); /* Sophisticated shadow */
+}
+
+/* Header "Editor" */
+.controls h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f1419;
+    letter-spacing: -0.5px;
+}
+
+/* Groups */
+.input-group {
+    margin-bottom: 24px; /* Better spacing between sections */
+}
+
+/* Labels */
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase; /* Makes it look like a pro tool */
+    letter-spacing: 0.5px;
+    color: #536471; /* X's secondary text color */
+}
+
+/* Inputs & Textareas */
+input[type="text"], 
+textarea, 
+select {
+    width: 100%;
+    padding: 14px 16px; /* Chunky, easy to click */
+    background-color: #f7f9f9; /* Light gray background */
+    border: 1px solid #cfd9de; /* Soft border */
+    border-radius: 12px; /* Smooth corners */
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #0f1419;
+    transition: all 0.2s ease;
+    box-sizing: border-box; /* Prevents padding from breaking layout */
+    margin-bottom: 12px; 
+}
+
+
+/* Input Focus State (The "Glow") */
+input[type="text"]:focus, 
+textarea:focus {
+    background-color: #ffffff;
+    border-color: #1d9bf0;
+    box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.15);
+    outline: none;
+}
+
+/* Textarea specific */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* File Input Styling */
+input[type="file"] {
+    background: white;
+    padding: 10px;
+    border: 1px dashed #cfd9de;
+    cursor: pointer;
+}
+input[type="file"]:hover {
+    background-color: #f7f9f9;
+    border-color: #1d9bf0;
+}
+
+/* Buttons (Download & Theme) */
+button {
+    background: #0f1419; /* Black button (Modern X style) */
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    width: 100%;
+    transition: transform 0.1s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #272c30;
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Specific Style for Download Button to highlight it */
+#downloadBtn {
+    background: #1d9bf0; /* Twitter Blue */
+}
+#downloadBtn:hover {
+    background: #1a8cd8;
+    box-shadow: 0 6px 20px rgba(29, 155, 240, 0.3);
+}
+
+/* Checkbox alignment */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    transform: scale(1.2); /* Make it slightly bigger */
+    cursor: pointer;
+}
+
+
+
+/* Tweet Preview Card */
+.preview-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tweet-card {
+    width: 100%;
+    max-width: 600px;
+    background: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.tweet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.tweet-header img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.user-info {
+    flex-grow: 1;
+}
+.name-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.name {
+    font-weight: 700;
+    font-size: 15px;
+}
+.handle {
+    display: block;
+    color: var(--text-sec);
+    font-size: 15px;
+}
+.verified-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--blue);
+    flex-shrink: 0; /* Prevents the badge from getting squashed */
+    margin-left: 4px; /* Adds a tiny breathing room */
+}
+.x-logo {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-main);
+}
+
+/* Content */
+.tweet-content {
+    margin-top: 12px;
+    font-size: 17px; /* Real tweet text size */
+    line-height: 1.4;
+    white-space: pre-wrap; /* Keeps line breaks */
+}
+
+/* Date */
+.tweet-date {
+    margin-top: 16px;
+    color: var(--text-sec);
+    font-size: 15px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+.views {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* Actions */
+.tweet-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 4px;
+    color: var(--text-sec);
+}
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+.action-item svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-sec);
+}
+
+.watermark {
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-sec);
+    margin-top: 10px;
+    opacity: 0.6;
+}
+/* Indicates the element is clickable */
+.editable {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.editable:hover {
+    opacity: 0.7;
+}
+
+/* The glow effect for the input box */
+.highlight-box {
+    border-color: #1d9bf0 !important;
+    box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.2) !important;
+    transition: all 0.3s ease;
+}
+/* --- MODAL STYLES --- */
+
+/* The Dark Backdrop */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px); /* Blurs the background */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* The Modal Box */
+.modal-content {
+    background: var(--card-bg);
+    color: var(--text-main);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+/* Animation Classes */
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-overlay.active .modal-content { transform: scale(1); }
+
+/* Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.modal-header h3 { margin: 0; font-size: 20px; }
+.close-icon {
+    background: none; border: none; font-size: 28px;
+    cursor: pointer; color: var(--text-sec); padding: 0; width: auto;
+}
+
+/* Preview Image */
+.preview-container {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px dashed var(--text-sec);
+}
+#modalPreviewImage {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Settings Inputs */
+.download-settings {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.setting-group { flex: 1; }
+.setting-group label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 5px; color: var(--text-sec); text-transform: uppercase; }
+
+/* Radio Buttons for Format */
+.format-toggles { display: flex; gap: 15px; padding-top: 10px; }
+.radio-label { display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 14px; }
+
+/* Progress Bar */
+.progress-area { margin-top: 15px; text-align: center; }
+.progress-bar-track {
+    width: 100%; height: 6px; background: #eff3f4;
+    border-radius: 3px; overflow: hidden; margin-bottom: 8px;
+}
+.progress-bar-fill {
+    width: 0%; height: 100%; background: #00ba7c; /* Green */
+    transition: width 0.1s linear;
+}
+#progressText { font-size: 12px; color: var(--text-sec); }
+
+/* Footer Buttons */
+.modal-footer { display: flex; gap: 10px; }
+.secondary-btn {
+    background: transparent; border: 1px solid var(--border); color: var(--text-main);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.secondary-btn:hover { background: rgba(0,0,0,0.05); }
+.primary-btn { background: #1d9bf0; color: white; }
+.primary-btn:hover { background: #1a8cd8; }
+
+
+/* --- LANDING PAGE STYLES --- */
+
+.landing-page {
+    display: block; /* Override flex from original body */
+    padding: 0;
+    background: #ffffff;
+    color: #0f1419;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo { font-weight: 800; font-size: 24px; letter-spacing: -1px; }
+.nav-links a { text-decoration: none; color: #536471; margin-left: 20px; font-weight: 600; font-size: 15px; }
+.nav-links a.active, .nav-links a:hover { color: #1d9bf0; }
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(circle at center, #f7f9f9 0%, #ffffff 70%);
+}
+.hero h1 { font-size: 48px; margin-bottom: 20px; letter-spacing: -1.5px; line-height: 1.1; }
+.highlight { color: #1d9bf0; }
+.hero p { font-size: 18px; color: #536471; max-width: 600px; margin: 0 auto 40px auto; line-height: 1.6; }
+
+.cta-buttons { display: flex; justify-content: center; gap: 15px; }
+.btn {
+    padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 16px; transition: transform 0.2s;
+}
+.btn.primary-btn { background: #0f1419; color: white; }
+.btn.primary-btn:hover { background: #1d9bf0; transform: translateY(-2px); }
+.btn.secondary-btn { background: #eff3f4; color: #0f1419; }
+.btn.disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+
+/* Tools Grid */
+.tools-section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.tool-card {
+    background: white;
+    border: 1px solid #eff3f4;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    position: relative;
+}
+.tool-card:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0,0,0,0.08); border-color: #1d9bf0; }
+
+.icon-box { font-size: 40px; margin-bottom: 20px; }
+.icon-box.insta-color { 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tool-card h3 { font-size: 22px; margin-bottom: 10px; }
+.tool-card p { color: #536471; line-height: 1.5; margin-bottom: 20px; }
+.link-text { color: #1d9bf0; font-weight: 700; }
+
+.badge {
+    background: #eff3f4; color: #536471; padding: 5px 10px; border-radius: 6px; font-size: 12px; font-weight: 700;
+}
+
+/* --- PROFESSIONAL CONTENT SECTION --- */
+
+.seo-content {
+    background: #ffffff;
+    padding: 100px 20px;
+    border-top: 1px solid #eff3f4;
+    color: #0f1419;
+}
+
+.content-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Header */
+.seo-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.seo-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    color: #0f1419;
+}
+
+.lead-text {
+    font-size: 18px;
+    color: #536471;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Stats Bar */
+.stats-bar {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eff3f4;
+    border-bottom: 1px solid #eff3f4;
+    padding: 20px 0;
+    margin-bottom: 60px;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    border-right: 1px solid #eff3f4;
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #536471;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f1419;
+}
+
+/* Grid Layout */
+.section-title h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-left: 4px solid #0f1419;
+    padding-left: 15px;
+}
+
+.seo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.seo-card {
+    background: #ffffff;
+    border: 1px solid #eff3f4;
+    border-radius: 8px; /* Sharper corners */
+    padding: 30px 25px;
+    transition: border-color 0.2s ease;
+}
+
+.seo-card:hover {
+    border-color: #cfd9de;
+}
+
+.card-icon {
+    color: #0f1419;
+    margin-bottom: 20px;
+}
+
+.seo-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.seo-card p {
+    font-size: 14px;
+    color: #536471;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Technical Specs List */
+.tech-specs {
+    display: flex;
+    gap: 40px;
+    background: #f7f9f9;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 60px;
+}
+
+.spec-column { flex: 1; }
+
+.spec-column h4 {
+    margin-top: 0;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #0f1419;
+}
+
+.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.clean-list li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #536471;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.clean-list li::before {
+    content: "•";
+    color: #1d9bf0;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.clean-list strong { color: #0f1419; font-weight: 600; }
+
+/* FAQ Grid */
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.faq-block {
+    border-bottom: 1px solid #eff3f4;
+    padding-bottom: 20px;
+}
+
+.faq-q {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f1419;
+    margin-bottom: 8px;
+}
+
+.faq-a {
+    font-size: 14px;
+    color: #536471;
+    line-height: 1.5;
+}
+
+/* Professional CTA */
+.pro-cta {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cta-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1d9bf0;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.cta-link:hover { border-bottom-color: #1d9bf0; }
+
+.divider { margin: 0 15px; color: #cfd9de; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .seo-grid { grid-template-columns: 1fr; }
+    .tech-specs { flex-direction: column; }
+    .faq-grid { grid-template-columns: 1fr; gap: 20px; }
+    .stats-bar { flex-wrap: wrap; }
+    .stat-item { min-width: 50%; border-right: none; margin-bottom: 15px; }
+}
+
+/* Footer */
+footer { padding: 40px; text-align: center; border-top: 1px solid #eff3f4; color: #536471; font-size: 14px; }
+.footer-links { margin-top: 10px; }
+.footer-links a { color: #536471; margin: 0 10px; text-decoration: none; }
+
+/* --- FLUID WAVE & SMART LOADER --- */
+
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* FLUID GRADIENT: Twitter Blue to a slightly lighter blue */
+    background: linear-gradient(135deg, #1d9bf0 0%, #1a8cd8 100%);
+    z-index: 9999;
+    
+    /* Flexbox to center the Loading Text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Animation Properties */
+    transform: translateY(100%); 
+    transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1);
+    pointer-events: none;
+}
+
+/* Add a subtle "shimmer" effect to make it look fluid */
+.page-transition::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+    background-size: 200% 200%;
+    animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+/* The Loading Content (Hidden by default) */
+.loading-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255,255,255,0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px auto;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Helper Classes */
+.page-transition.cover { transform: translateY(0%); }
+.page-transition.exit { transform: translateY(-100%); }
+
+/* Show Loading Text (Added by JS after delay) */
+.page-transition.show-loader .loading-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- INSTAGRAM MOCKUP THEME (FIXED) --- */
+
+/* 1. Background */
+body.insta-theme {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    min-height: 100vh;
+}
+
+/* 2. Card Layout */
+.insta-card {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #262626;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* 3. Header - FIXED ALIGNMENT */
+.insta-header {
+    display: flex; /* Critical for alignment */
+    justify-content: space-between; /* Pushes dots to the right */
+    align-items: center; /* Centers them vertically */
+    padding: 14px 20px;
+    height: auto;
+}
+
+.insta-user-info {
+    display: flex;
+    align-items: center;
+}
+.insta-user-info img {
+    width: 42px; height: 42px;
+    padding: 2px;
+    border: 2px solid transparent;
+  background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box, 
+            linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) border-box;
+border-radius: 50%;
+    margin-right: 12px;
+}
+.insta-username { font-weight: 600; font-size: 14px; color: #000; display: flex; align-items: center; gap: 4px; }
+.insta-location { font-size: 12px; color: #262626; margin-top: 1px; }
+
+/* 4. Icons */
+.insta-verified { width: 14px; height: 14px; fill: #3897f0; display: inline-block; }
+.insta-dots { color: #262626; cursor: pointer; display: flex; align-items: center;}
+.insta-dots svg { width: 24px; height: 24px; fill: currentColor; }
+
+/* 5. Placeholder & Image */
+.insta-image-container { background: #fff; padding: 0; position: relative; }
+.insta-image-container img { width: 100%; height: auto; display: block; }
+.insta-placeholder {
+    width: 100%; height: 420px;
+    background-color: #efefef;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #a8a8a8; cursor: pointer;
+}
+.placeholder-icon { font-size: 50px; opacity: 0.5; }
+
+/* 6. Actions Bar - FIXED ALIGNMENT */
+.insta-actions {
+    display: flex; /* Critical */
+    justify-content: space-between; /* Pushes bookmark to right */
+    align-items: center;
+    padding: 12px 20px 0 20px;
+}
+.left-actions { 
+    display: flex; 
+    gap: 18px; /* Increased gap for realism */
+    align-items: center;
+}
+.insta-icon { 
+    width: 26px; height: 26px; 
+    transition: transform 0.1s;
+    color: #262626;
+}
+.insta-icon:hover { transform: scale(1.1); }
+.red-heart { fill: #ed4956; color: #ed4956; }
+
+/* 7. Details & Hashtags */
+.insta-details { padding: 12px 20px 20px 20px; }
+.insta-likes { font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+.insta-caption { font-size: 14px; line-height: 1.5; margin-bottom: 6px; }
+.insta-username-bold { font-weight: 600; margin-right: 6px; }
+.view-comments { color: #8e8e8e; font-size: 14px; margin-bottom: 4px; display: block; }
+
+/* Smart Hashtag Color */
+.hashtag { color: #00376b; } /* Default Insta Blue */
+
+/* 8. Dark Mode Overrides */
+.dark-mode-vars .insta-card { background: #000; color: white; }
+.dark-mode-vars .insta-username { color: white; }
+.dark-mode-vars .insta-location { color: #a8a8a8; }
+.dark-mode-vars .insta-dots { color: white; }
+.dark-mode-vars .insta-icon { color: white; }
+.dark-mode-vars .red-heart { color: #ed4956; } /* Heart stays red */
+.dark-mode-vars .insta-placeholder { background-color: #121212; color: #333; }
+.dark-mode-vars .hashtag { color: #e0f1ff; } /* Lighter Blue for Dark Mode */
+
+/* Heart Animation */
+@keyframes like-bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+.bounce {
+    animation: like-bounce 0.3s ease-in-out;
+}
+
+/* --- INSTAGRAM GRADIENT BUTTON --- */
+.btn.insta-btn {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white; /* Text is white */
+    border: none;
+}
+
+.btn.insta-btn:hover {
+    filter: brightness(1.1); /* Slightly brighter when hovering */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(220, 39, 67, 0.4); /* Matching reddish shadow */
+}
+
+/* --- CROPPER STYLES --- */
+
+/* Fix cropper container height */
+.cropper-container {
+    width: 100%;
+}
+
+/* CIRCLE CROP GUIDE (For Profile Pics) */
+.cropper-view-box.circle-crop {
+    border-radius: 50%;
+    outline: 0;
+    box-shadow: 0 0 0 1px #39f;
+}
+.cropper-face.circle-crop {
+    background-color: inherit !important;
+    border-radius: 50%;
+}
+
+/* Hide grid lines for circle crop if desired, or keep them */
+.circle-crop .cropper-dashed, 
+.circle-crop .cropper-center {
+    display: none;
+}
+
+/*  Force the buttons to sit on top of the image cropper */
+.modal-footer {
+    position: relative;
+    z-index: 50; /* Super high priority */
+    background: var(--card-bg); /* Prevents see-through */
+}
+
+/* Constrain the image editor so it doesn't bleed out */
+.modal-body {
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Cuts off any overflowing parts of the cropper */
+}
+
+/* Ensure the Close 'X' is also clickable */
+.modal-header .close-icon {
+    position: relative;
+    z-index: 50;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+    
+}
+
+
