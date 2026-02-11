@@ -315,73 +315,152 @@ input[type="checkbox"] {
     box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.2) !important;
     transition: all 0.3s ease;
 }
-/* --- 1. MODERN DROPDOWN --- */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+/* --- 1. MODERN DROPDOWN (PREMIUM UI FIX) --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        /* The "More" Button - Now looks like a UI pill */
-        .dropbtn {
-            background-color: #f7f9f9;
-            color: #0f1419;
-            padding: 10px 18px;
-            font-size: 15px;
-            font-weight: 600;
-            border: 1px solid transparent;
-            border-radius: 99px; /* Pill shape */
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+/* The "More" Button - Glassy & Interactive */
+.dropbtn {
+    background-color: transparent;
+    color: #536471;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: 99px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-        .dropbtn:hover {
-            background-color: #eff3f4;
-            border-color: #cfd9de;
-        }
+.dropbtn:hover, .dropdown:hover .dropbtn {
+    background-color: rgba(29, 155, 240, 0.1); /* Subtle Blue Tint */
+    color: #1d9bf0; /* Twitter Blue Text */
+}
 
-        /* Dropdown Menu - Floating Card */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 120%; /* Slight gap */
-            right: 0;
-            background-color: #ffffff;
-            min-width: 220px;
-            box-shadow: 0px 10px 40px rgba(0,0,0,0.15); /* Deep shadow */
-            border-radius: 16px;
-            padding: 8px;
-            z-index: 9999;
-            border: 1px solid #eff3f4;
-            animation: fadeIn 0.2s ease-in-out;
-        }
+/* The Dropdown Menu - Smooth Transition & "Gap Fix" */
+.dropdown-content {
+    /* 1. Layout - Always Grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two Columns */
+    gap: 8px;
+    min-width: 360px; /* Wider for better readability */
+    padding: 12px;
+    
+    /* 2. Position */
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    margin-top: 15px; /* Visual spacing */
+    
+    /* 3. Style (Glassmorphism-ish) */
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 24px; /* Super round, modern corners */
+    box-shadow: 
+        0 10px 40px -10px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(0,0,0,0.02); /* Crisp edge */
+    
+    /* 4. The Animation Logic (Fixes "Dullness") */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.98); /* Start slightly lower and smaller */
+    transform-origin: top right;
+    transition: 
+        opacity 0.25s ease,
+        transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+        visibility 0.25s;
+    z-index: 1000;
+}
 
-        /* Menu Links */
-        .dropdown-content a {
-            color: #0f1419;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            border-radius: 8px;
-            transition: background 0.1s;
-        }
+/* THE BRIDGE: Fixes the "Sus" flickering when moving mouse */
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Extends invisible area up to the button */
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
 
-        .dropdown-content a:hover {
-            background-color: #f7f9f9;
-            color: #1d9bf0; /* Blue highlight */
-        }
+/* Hover State - Triggers the animation */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
 
-        .dropdown:hover .dropdown-content { display: block; }
+/* The Links inside */
+.dropdown-content a {
+    color: #0f1419;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 16px; /* Matching rounded corners */
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* Hover Effect on Links */
+.dropdown-content a:hover {
+    background-color: #f7f9f9;
+    transform: translateX(4px); /* Satisfying slide */
+}
+
+/* The Colored Dots */
+.dropdown-content a::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #eff3f4;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+.dropdown-content a:hover::before {
+    transform: scale(1.5); /* Dot pulses on hover */
+}
+
+/* --- MOBILE OVERRIDE --- */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+        margin-top: 10px;
+        min-width: 100%;
+    }
+    
+    .dropdown-content a {
+        padding: 15px 0;
+        border-radius: 0;
+        border-bottom: 1px solid #f7f9f9;
+    }
+    
+    .dropdown-content a:hover {
+        background: transparent;
+        transform: translateX(10px);
+    }
+    
+    /* Hide the bridge on mobile so it doesn't block clicks */
+    .dropdown-content::before { display: none; }
+}
+
 
  /* --- UNIVERSAL APP BUTTONS (Exact Match to Hero) --- */
 
@@ -1337,6 +1416,127 @@ border-radius: 50%;
     /* Hide the 3rd layer only if screen is very narrow */
     .hero-card.next-3, .hero-card.prev-3 { opacity: 0; }
 }
+/* --- RESPONSIVE NAVIGATION LOGIC --- */
+
+/* 1. Base States (Desktop) */
+.mobile-toggle { display: none; } /* Hide hamburger */
+.tablet-link { display: none; }   /* Hide duplicate links in dropdown */
+
+/* 2. Tablet View (Max Width 1024px) */
+@media (max-width: 1024px) {
+    /* Hide the top-bar versions */
+    .desktop-link { display: none; }
+    
+    /* Show the dropdown versions so they are still accessible */
+    .tablet-link { display: block; }
+}
+
+/* --- 3. MOBILE SIDE DRAWER (Fixed & Polished) --- */
+@media (max-width: 768px) {
+    
+    /* FIX 1: Reset global button styles so hamburger isn't huge */
+    .mobile-toggle {
+        display: block;
+        background: transparent;
+        border: none;
+        color: #0f1419;
+        cursor: pointer;
+        padding: 5px;
+        position: relative;
+        z-index: 3000; 
+        
+        /* CRITICAL FIXES */
+        width: auto !important; /* Prevents it from stretching full width */
+        margin-left: auto;      /* Pushes it to the far right */
+        box-shadow: none;       /* Removes any button shadows */
+        margin-top: 0;          /* Resets global button margins */
+    }
+
+    /* Transform the X on click */
+    .mobile-toggle.is-open svg {
+        transform: rotate(45deg);
+        stroke: #0f1419;
+        transition: transform 0.3s ease;
+    }
+
+    /* THE DRAWER CONTAINER */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        background: #ffffff;
+        
+        /* FIX 2: Width Logic */
+        /* 35% is too small for text, so we use a fixed pixel width (standard app feel) */
+        width: 260px;  
+        
+        display: flex;
+        flex-direction: column;
+        padding: 80px 25px 40px 25px; 
+        box-sizing: border-box;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 2000;
+        border-left: 1px solid #eff3f4;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.05); /* Subtle shadow on the left edge */
+    }
+
+    /* STATE: OPEN */
+    .nav-links.active {
+        right: 0; 
+        box-shadow: 0 0 0 100vmax rgba(0,0,0,0.5); /* The Dim Backdrop */
+    }
+
+    /* LINK STYLING */
+    .nav-links a {
+        font-size: 16px; 
+        font-weight: 600;
+        color: #0f1419;
+        padding: 15px 0;
+        border-bottom: 1px solid #f7f9f9;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        opacity: 0; 
+        transform: translateX(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Animation Delays */
+    .nav-links.active a { opacity: 1; transform: translateX(0); }
+    .nav-links.active a:nth-child(1) { transition-delay: 0.05s; }
+    .nav-links.active a:nth-child(2) { transition-delay: 0.1s; }
+    .nav-links.active a:nth-child(3) { transition-delay: 0.15s; }
+    /* ... add more if needed */
+
+    /* FLATTEN DROPDOWN LOGIC */
+    .dropdown { width: 100%; }
+    .dropbtn { display: none; }
+    
+    .dropdown-content {
+        display: block !important;
+        position: static;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        width: 100%;
+        animation: none;
+        background: transparent;
+        min-width: 0;
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Ensure no dots are cut off */
+    .dropdown-content a::before {
+        flex-shrink: 0; 
+    }
+
+    /* Clean up duplicate links */
+    .tablet-link { display: none !important; }
+}
+
+
 
 
 /* Mobile Responsiveness */
