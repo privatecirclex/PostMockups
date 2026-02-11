@@ -33,6 +33,38 @@ body {
     max-width: 1000px;
     width: 100%;
 }
+.back-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f7f9f9; /* Soft gray background */
+    color: #536471;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-bottom: 20px; /* Space below button */
+    border: 1px solid transparent;
+}
+
+.back-nav-btn:hover {
+    background-color: #eff3f4; /* Slightly darker on hover */
+    color: #0f1419;
+    transform: translateX(-2px); /* Subtle slide left */
+    border-color: #cfd9de;
+}
+
+/* Dark mode adjustment if needed later */
+@media (prefers-color-scheme: dark) {
+    .back-nav-btn {
+        background-color: #2f3336;
+        color: #e7e9ea;
+    }
+    .back-nav-btn:hover {
+        background-color: #3e4144;
+    }
+}
 
 
 /* The Main Editor Card */
@@ -283,6 +315,185 @@ input[type="checkbox"] {
     box-shadow: 0 0 0 4px rgba(29, 155, 240, 0.2) !important;
     transition: all 0.3s ease;
 }
+/* --- 1. MODERN DROPDOWN --- */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* The "More" Button - Now looks like a UI pill */
+        .dropbtn {
+            background-color: #f7f9f9;
+            color: #0f1419;
+            padding: 10px 18px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            border-radius: 99px; /* Pill shape */
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dropbtn:hover {
+            background-color: #eff3f4;
+            border-color: #cfd9de;
+        }
+
+        /* Dropdown Menu - Floating Card */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 120%; /* Slight gap */
+            right: 0;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0px 10px 40px rgba(0,0,0,0.15); /* Deep shadow */
+            border-radius: 16px;
+            padding: 8px;
+            z-index: 9999;
+            border: 1px solid #eff3f4;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        /* Menu Links */
+        .dropdown-content a {
+            color: #0f1419;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background 0.1s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f7f9f9;
+            color: #1d9bf0; /* Blue highlight */
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+ /* --- UNIVERSAL APP BUTTONS (Exact Match to Hero) --- */
+
+.hero-grid-secondary {
+    display: grid; /* Changed from flex to grid */
+    grid-template-columns: 1fr 1fr 1fr; /* Exact 3 equal columns */
+    gap: 15px; /* Same gap as main buttons */
+    max-width: 500px; /* Exact same width as main container */
+    margin: 15px auto 0 auto; /* Center align */
+}
+
+.app-btn {
+    display: flex; /* Ensures text centering works perfectly */
+    width: 100%; /* Forces button to fill the exact column width */
+    box-sizing: border-box; /* Prevents padding from breaking size */
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0; /* Vertical padding only, width handles horizontal */
+    
+    /* Visual Styles */
+    border-radius: 50px; 
+    text-decoration: none;
+    font-weight: 700; 
+    font-size: 16px; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    border: none;
+    color: white;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1); 
+}
+
+/* Hover Effect */
+.app-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+
+/* --- BRAND SPECIFIC COLORS & SHADOWS --- */
+
+/* WhatsApp */
+.btn-whatsapp { 
+    background-color: #25D366; 
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4); 
+}
+.btn-whatsapp:hover { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); }
+
+/* LinkedIn */
+.btn-linkedin { 
+    background-color: #0077B5; 
+    box-shadow: 0 4px 14px rgba(0, 119, 181, 0.4); 
+}
+.btn-linkedin:hover { box-shadow: 0 6px 20px rgba(0, 119, 181, 0.6); }
+
+/* Threads */
+.btn-threads { 
+    background-color: #000000; 
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4); 
+}
+.btn-threads:hover { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); }
+
+/* Discord */
+.btn-discord { 
+    background-color: #5865F2; 
+    box-shadow: 0 4px 14px rgba(88, 101, 242, 0.4); 
+}
+.btn-discord:hover { box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6); }
+
+/* iMessage */
+.btn-imessage { 
+    background-color: #34C759; 
+    box-shadow: 0 4px 14px rgba(52, 199, 89, 0.4); 
+}
+.btn-imessage:hover { box-shadow: 0 6px 20px rgba(52, 199, 89, 0.6); }
+
+/* Gmail */
+.btn-gmail { 
+    background-color: #EA4335; 
+    box-shadow: 0 4px 14px rgba(234, 67, 53, 0.4); 
+}
+.btn-gmail:hover { box-shadow: 0 6px 20px rgba(234, 67, 53, 0.6); }
+
+/* Facebook */
+.btn-facebook { 
+    background-color: #1877F2; 
+    box-shadow: 0 4px 14px rgba(24, 119, 242, 0.4); 
+}
+.btn-facebook:hover { box-shadow: 0 6px 20px rgba(24, 119, 242, 0.6); }
+
+/* Snapchat (Yellow needs black text) */
+.btn-snapchat { 
+    background-color: #FFFC00; 
+    color: black !important; /* Force black text */
+    box-shadow: 0 4px 14px rgba(255, 252, 0, 0.4); 
+}
+.btn-snapchat:hover { box-shadow: 0 6px 20px rgba(255, 252, 0, 0.6); }
+
+/* Reddit */
+.btn-reddit { 
+    background-color: #FF4500; 
+    box-shadow: 0 4px 14px rgba(255, 69, 0, 0.4); 
+}
+.btn-reddit:hover { box-shadow: 0 6px 20px rgba(255, 69, 0, 0.6); }
+
+        /* Bottom Links */
+        .pro-cta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            line-height: 1.8;
+            margin-top: 40px;
+        }
 /* --- MODAL STYLES --- */
 
 /* The Dark Backdrop */
@@ -685,6 +896,14 @@ footer { padding: 40px; text-align: center; border-top: 1px solid #eff3f4; color
 .footer-links { margin-top: 10px; }
 .footer-links a { color: #536471; margin: 0 10px; text-decoration: none; }
 
+.text-insta-grad {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
 /* --- FLUID WAVE & SMART LOADER --- */
 
 .page-transition {
@@ -936,6 +1155,187 @@ border-radius: 50%;
     background-color: #cc0000; /* Darker Red on Hover */
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3); /* Red Shadow */
+}
+
+/* --- WIDE HERO STACK (Isolated Center) --- */
+.hero-stack-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Wide container for separation */
+    height: 400px;
+    margin: 40px auto;
+    perspective: 1000px;
+    z-index: 10;
+    /* overflow: hidden;  Optional: Keeps cards inside bounds */
+}
+
+/* --- THE CARD BASE --- */
+.hero-card {
+    position: absolute;
+    width: 320px; /* Fixed width for the cards */
+    height: 380px;
+    left: 50%; /* Start at center point */
+    top: 50%;
+    margin-left: -160px; /* Center alignment (half of width) */
+    margin-top: -190px;  /* Center alignment (half of height) */
+    
+    background: #f7f9f9;
+    border-radius: 28px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    
+    /* Branding */
+    border: 3px solid var(--brand-color);
+    box-shadow: 0 15px 35px -10px var(--brand-glow);
+    
+    /* Physics */
+    transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- POSITIONS --- */
+
+/* 1. CENTER (The Hero) */
+.hero-card.active {
+    opacity: 1;
+    z-index: 50;
+    transform: translateX(0) scale(1.1); /* Slight zoom for focus */
+    pointer-events: all;
+    background: #ffffff;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2), 0 0 30px var(--brand-glow);
+}
+
+/* 2. NEXT PILE (Left Edge - Waiting) */
+.hero-card.next {
+    opacity: 1;
+    z-index: 40;
+    /* Push far left (-350px) + Stack effect */
+    transform: translateX(-350px) scale(0.9) rotateY(15deg);
+    cursor: pointer;
+    pointer-events: all;
+    filter: brightness(0.95);
+}
+.hero-card.next-2 {
+    opacity: 1;
+    z-index: 30;
+    transform: translateX(-380px) scale(0.85) rotateY(20deg); /* Stacked behind */
+}
+.hero-card.next-3 {
+    opacity: 1;
+    z-index: 20;
+    transform: translateX(-410px) scale(0.8) rotateY(25deg); /* Stacked deeper */
+}
+
+/* 3. PREV PILE (Right Edge - History) */
+.hero-card.prev {
+    opacity: 1;
+    z-index: 40;
+    /* Push far right (+350px) */
+    transform: translateX(350px) scale(0.9) rotateY(-15deg);
+    cursor: pointer;
+    pointer-events: all;
+    filter: brightness(0.95);
+}
+.hero-card.prev-2 {
+    opacity: 1;
+    z-index: 30;
+    transform: translateX(380px) scale(0.85) rotateY(-20deg);
+}
+.hero-card.prev-3 {
+    opacity: 1;
+    z-index: 20;
+    transform: translateX(410px) scale(0.8) rotateY(-25deg);
+}
+
+/* --- CONTENT FADE (Blur text on sides) --- */
+.hero-card .card-content-wrapper {
+    opacity: 1; /* Changed from 0 to 1 to show content */
+    filter: blur(8px); /* Add a heavy blur to side cards */
+    transition: all 0.5s ease;
+    transform: scale(0.9);
+}
+
+/* Clear the blur and scale up when the card becomes active */
+.hero-card.active .card-content-wrapper {
+    opacity: 1;
+    filter: blur(0); /* Remove blur */
+    transform: scale(1);
+    transition-delay: 0.1s;
+}
+/* Hide the button on side cards so it doesn't look messy while blurred */
+.hero-card:not(.active) .launch-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hero-card.active .launch-btn {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/* --- CARD INTERIOR --- */
+.card-logo-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--brand-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    color: white;
+    box-shadow: 0 10px 20px var(--brand-glow);
+}
+.card-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: var(--brand-color);
+    letter-spacing: -0.5px;
+}
+.card-desc {
+    font-size: 14px;
+    color: #536471;
+    line-height: 1.5;
+    margin: 0 auto 25px auto;
+}
+.launch-btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    background: var(--brand-color);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Mobile: Maintain 3D spacing instead of overlapping */
+@media (max-width: 768px) {
+    .hero-stack-container { max-width: 100%; height: 360px; }
+    .hero-card { width: 260px; margin-left: -130px; } /* Slightly smaller cards for mobile */
+    
+    /* Increase these values to push the side cards out further */
+    .hero-card.next { transform: translateX(-220px) scale(0.8) rotateY(15deg); }
+    .hero-card.prev { transform: translateX(220px) scale(0.8) rotateY(-15deg); }
+    
+    /* Keep the secondary stack visible but tucked behind */
+    .hero-card.next-2 { opacity: 0.6; transform: translateX(-240px) scale(0.7) rotateY(20deg); }
+    .hero-card.prev-2 { opacity: 0.6; transform: translateX(240px) scale(0.7) rotateY(-20deg); }
+    
+    /* Hide the 3rd layer only if screen is very narrow */
+    .hero-card.next-3, .hero-card.prev-3 { opacity: 0; }
 }
 
 
