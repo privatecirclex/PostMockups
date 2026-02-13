@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Mockup Tools | Post Mockups</title>
+    <meta name="description" content="Create fake Reddit posts, nested comment threads, and subreddit headers. The ultimate tool for Reddit marketing mockups and karma simulation.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- REDDIT THEME SPECIFICS --- */
+        
+        /* The "Karma" Gradient - Orange to Red-Orange */
+        .rd-grad-text {
+            background: linear-gradient(135deg, #FF4500 0%, #E03500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Background Gradient for Badges/Buttons */
+        .rd-grad-bg {
+            background: linear-gradient(135deg, #FF4500 0%, #E03500 100%);
+            color: white;
+        }
+        
+        /* Icon Fill */
+        .rd-grad-icon svg {
+            fill: url(#rdGradient);
+        }
+
+        /* Hover States for Tools */
+        .tool-card:hover {
+            border-color: #FF4500;
+            box-shadow: 0 10px 40px rgba(255, 69, 0, 0.1);
+        }
+        
+        /* Navbar Active State Override */
+        .nav-links a.active {
+            color: #FF4500;
+        }
+
+        /* Specific "Mod Green" for Mod Tool Badge */
+        .badge-mod {
+            background: #24A0ED; /* Reddit Link Blue/Mod Color mix */
+            color: white;
+        }
+    </style>
+</head>
+<body class="landing-page">
+
+    <div class="page-transition cover">
+        <div class="loading-content">
+            <div class="spinner" style="border-top-color: #FF4500;"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Post <span class="highlight"> Mockups</span></a>
+        
+        <button class="mobile-toggle" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="nav-links">
+            <a href="x-post.html">X (Twitter)</a>
+            <a href="instagram-tools.html">Instagram</a>
+            <a href="whatsapp-tools.html">WhatsApp</a>
+            <a href="reddit-tools.html" class="active rd-grad-text" style="font-weight: 800;">Reddit</a>
+        </div>
+    </nav>
+
+    <header class="hero" style="position: relative; padding: 60px 20px 40px 20px;">
+        <a href="index.html" style="position: absolute; left: 20px; top: 20px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #536471; transition: all 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(0,0,0,0.05)'; this.style.transform='translateX(-3px)'" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateX(0)'">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </a>
+
+        <div class="hero-content">
+            <h1>Create <span class="rd-grad-text">Reddit</span> Mockups</h1>
+            <p>Simulate the front page of the internet. Generate authentic posts, nested comments, and subreddit notifications.</p>
+        </div>
+    </header>
+
+    <section class="tools-section" style="padding-top: 20px;">
+        <div class="tools-grid">
+            
+            <a href="reddit-post.html" class="tool-card">
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                        <defs>
+                            <linearGradient id="rdGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF4500" />
+                                <stop offset="100%" style="stop-color:#E03500" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#rdGradient)" d="M12.781 2.375c-.381-.475-1.181-.475-1.562 0l-5.25 6.563c-.418.522-.044 1.312.625 1.312H9v6H7.25c-.418 0-.625.506-.331.8l3.438 3.438c.356.356.93.356 1.287 0l3.438-3.438c.294-.294.087-.8-.331-.8H13v-6h2.406c.669 0 1.044-.79.625-1.312l-5.25-6.563z"/>
+                    </svg>
+                </div>
+                <h3>Post Generator</h3>
+                <p>Create text, image, or link posts. Customize karma counts, awards, 'OC' tags, and user flair.</p>
+                <span class="link-text" style="color: #FF4500;">Launch Tool &rarr;</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge rd-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#rdGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                </div>
+                <h3>Comment Chain</h3>
+                <p>Build nested comment threads. Simulate 'OP' responses, deleted comments, and downvoted 'hidden' replies.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge rd-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#rdGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                </div>
+                <h3>Subreddit Maker</h3>
+                <p>Design a custom subreddit header, sidebar rules, member counts, and 'Online' status indicators.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge badge-mod" style="position: absolute; top: 20px; right: 20px;">Mod Tools</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#rdGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h3>Mod Action Spoofer</h3>
+                <p>Generate the infamous "You have been permanently banned" message or green Mod-distinguished comments.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge rd-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#rdGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                </div>
+                <h3>Award Studio</h3>
+                <p>Add Gold, Platinum, or custom community awards to any post layout to simulate high engagement.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge rd-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#rdGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <h3>Profile Mockup</h3>
+                <p>Fake a user card with 'Cake Day', massive Karma scores, and the Trophy Case display.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Post Mockups. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const curtain = document.querySelector('.page-transition');
+            if(curtain) {
+                setTimeout(() => { 
+                    curtain.classList.add('exit'); 
+                    curtain.classList.remove('cover'); 
+                }, 300);
+            }
+
+            // Mobile Nav Logic
+            const toggleBtn = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (toggleBtn && navLinks) {
+                toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    toggleBtn.classList.toggle('is-open');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        toggleBtn.classList.remove('is-open');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

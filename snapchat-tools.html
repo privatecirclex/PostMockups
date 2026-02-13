@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapchat Mockup Tools | Post Mockups</title>
+    <meta name="description" content="Generate professional Snapchat UI mockups. Create fake chats, snaps, and story interfaces for marketing and design.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- SNAPCHAT PROFESSIONAL THEME --- */
+        
+        :root {
+            --snap-yellow: #FFFC00;
+            --snap-gold: #D4AF37; /* Darker gold for gradient definition */
+            --snap-black: #000000;
+        }
+
+        /* 1. HEADER TEXT: Bright Snap Yellow Gradient */
+        .snap-title {
+            /* The Gradient: Snap Yellow to a Rich Gold for visibility */
+            background: linear-gradient(135deg, #FFDE00 0%, #E5B80B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            
+            display: inline-block;
+            /* Subtle drop shadow to ensure legibility on white */
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+        }
+
+        /* 2. NAVBAR / SIDEBAR ACTIVE STATE: Matching Gradient */
+        .nav-links a.active {
+            background: linear-gradient(135deg, #FFDE00 0%, #E5B80B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            
+            /* Remove the old underline */
+            border-bottom: none; 
+            position: relative;
+        }
+        
+        /* Optional: Add a subtle glow to the active link in the sidebar */
+        .nav-links a.active::before {
+            display: none; /* Ensure no lines appear */
+        }
+
+        /* 3. BADGES: Black Text on Yellow (High Contrast) */
+        .badge-snap {
+            background-color: var(--snap-yellow);
+            color: black;
+            font-weight: 700;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* 4. ICONS: Minimalist Wireframe Style */
+        .snap-icon-box {
+            color: var(--snap-black);
+            transition: all 0.3s ease;
+        }
+        
+        /* 5. CARD INTERACTION: Elegant Glow */
+        .tool-card:hover {
+            border-color: var(--snap-black); /* Sharp Black Border */
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08); /* Soft Shadow */
+        }
+        
+        .tool-card:hover .snap-icon-box {
+            transform: scale(1.05);
+            /* Yellow drop shadow to icon on hover */
+            filter: drop-shadow(0 4px 6px rgba(255, 252, 0, 0.5)); 
+        }
+
+        /* 6. LINK TEXT */
+        .link-snap {
+            color: var(--snap-black);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body class="landing-page">
+
+    <div class="page-transition cover">
+        <div class="loading-content">
+            <div class="spinner" style="border-top-color: #000;"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Post <span class="highlight"> Mockups</span></a>
+        
+        <button class="mobile-toggle" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="nav-links">
+            <a href="x-post.html">X (Twitter)</a>
+            <a href="instagram-tools.html">Instagram</a>
+            <a href="whatsapp-tools.html">WhatsApp</a>
+            <a href="snapchat-tools.html" class="active">Snapchat</a>
+        </div>
+    </nav>
+
+    <header class="hero" style="position: relative; padding: 60px 20px 40px 20px;">
+        <a href="index.html" style="position: absolute; left: 20px; top: 20px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #536471; transition: all 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(0,0,0,0.05)'; this.style.transform='translateX(-3px)'" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateX(0)'">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </a>
+
+        <div class="hero-content">
+            <h1>Create <span class="snap-title">Snapchat</span> Mockups</h1>
+            <p>High-fidelity UI tools for generating authentic Chats, Snaps, and Story interfaces. Precision engineered for designers and marketers.</p>
+        </div>
+    </header>
+
+    <section class="tools-section" style="padding-top: 20px;">
+        <div class="tools-grid">
+            
+            <a href="snapchat-generator.html" class="tool-card">
+                <div class="icon-box snap-icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a8 8 0 0 1 8 8c0 3.5-2.5 6.5-5 8 0 1 1 2 2 2-1 0-2 .5-2 1.5 0 .5.5 1 1.5 1s1.5.5 2.5 1c1.5 0 2.5-1 2.5-1s-1-.5-2-2c-.5-1-1-2.5-.5-3 2.5-1.5 4-4.5 4-7.5a9 9 0 0 0-18 0c0 3 1.5 6 4 7.5.5.5 0 2-.5 3-1 1.5-2 1.5-2 2s1 1 2.5 1c1 0 2-.5 2.5-1 .5-.5 1-1 1.5-1s1.5-.5 2.5-1c1-1 2-1.5 2-1.5 0-1 1-1.5 2-2 1-2-1.5-5.5-5-9z"/>
+                    </svg>
+                </div>
+                <h3>Chat Generator</h3>
+                <p>Generate 1:1 chat interfaces. Customize "Opened/Delivered" status (Red/Purple/Blue) and saved messages.</p>
+                <span class="link-snap">Launch Tool &rarr;</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge badge-snap" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box snap-icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <circle cx="12" cy="13" r="4"></circle>
+                    </svg>
+                </div>
+                <h3>Snap Builder</h3>
+                <p>Create visual Snaps with the translucent caption bar, countdown timer, and geo-filter overlays.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge badge-snap" style="position: absolute; top: 20px; right: 20px;">Hot</div>
+                <div class="icon-box snap-icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.011.249-4.988A3.003 3.003 0 0112 3c0 0 0 0 0 0a3.003 3.003 0 011.751 1.012C14.224 4.989 15.072 6.857 14 9c-.5 1-1 1.62-1 3a2.5 2.5 0 002.5 2.5c.364 0 .706-.082 1.01-.228a.75.75 0 011.132.812A6.5 6.5 0 115.358 15.084a.75.75 0 011.132-.812c.304.146.646.228 1.01.228z"></path>
+                    </svg>
+                </div>
+                <h3>Streak Simulator</h3>
+                <p>Add the "Fire" emoji and streak count to contact rows. Perfect for "restoring streak" proofs.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge badge-snap" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box snap-icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                    </svg>
+                </div>
+                <h3>Story Analytics</h3>
+                <p>Mockup the "Viewed By" list and screenshot notifications on your Stories.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge badge-snap" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box snap-icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <h3>Snap Map</h3>
+                <p>Create a fake location status with your Bitmoji in "Ghost Mode" or driving a custom car.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge badge-snap" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box snap-icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </div>
+                <h3>Notification Stack</h3>
+                <p>Generate a stack of "Typing..." or "New Snap from..." alerts for iOS lock screens.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Post Mockups. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const curtain = document.querySelector('.page-transition');
+            if(curtain) {
+                setTimeout(() => { 
+                    curtain.classList.add('exit'); 
+                    curtain.classList.remove('cover'); 
+                }, 300);
+            }
+
+            // Mobile Nav Logic
+            const toggleBtn = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (toggleBtn && navLinks) {
+                toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    toggleBtn.classList.toggle('is-open');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        toggleBtn.classList.remove('is-open');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

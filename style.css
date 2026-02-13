@@ -1,3 +1,14 @@
+/* Removes the blue background flash on mobile taps */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Optional: Removes the blue outline border on desktop clicks */
+/* Note: Only do this if you have custom :focus styles for accessibility */
+*:focus {
+    outline: none;
+}
+
 :root {
     --bg-color: #f0f2f5;
     --card-bg: #ffffff;

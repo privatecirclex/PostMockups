@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threads Mockup Tools | Post Mockups</title>
+    <meta name="description" content="Create authentic Threads mockups including reply chains, voice notes, and profile badges. The best free tool for Threads UI visualization.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- THREADS THEME SPECIFICS (Monochrome & Minimal) --- */
+        
+        /* The "Obsidian Loop" Gradient - Subtle shift for depth */
+        .th-grad-text {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Background Gradient for Badges */
+        .th-grad-bg {
+            background: #000000;
+            color: white;
+        }
+        
+        /* Icon Fill - Pure Black */
+        .th-grad-icon svg {
+            fill: #000000;
+        }
+
+        /* Hover States - sharp black border */
+        .tool-card:hover {
+            border-color: #000000;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Navbar Active State Override */
+        .nav-links a.active {
+            color: #000000;
+            font-weight: 800;
+        }
+
+        /* Specific "Instagram Badge" color for the Profile tool */
+        .badge-insta {
+            background: linear-gradient(45deg, #f09433 0%, #bc1888 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="landing-page">
+
+    <div class="page-transition cover">
+        <div class="loading-content">
+            <div class="spinner" style="border-top-color: #000;"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Post <span class="highlight"> Mockups</span></a>
+        
+        <button class="mobile-toggle" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="nav-links">
+            <a href="x-post.html">X (Twitter)</a>
+            <a href="instagram-tools.html">Instagram</a>
+            <a href="whatsapp-tools.html">WhatsApp</a>
+            <a href="threads-tools.html" class="active th-grad-text">Threads</a>
+        </div>
+    </nav>
+
+    <header class="hero" style="position: relative; padding: 60px 20px 40px 20px;">
+        <a href="index.html" style="position: absolute; left: 20px; top: 20px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #536471; transition: all 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(0,0,0,0.05)'; this.style.transform='translateX(-3px)'" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateX(0)'">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </a>
+
+        <div class="hero-content">
+            <h1>Create <span class="th-grad-text">Threads</span> Mockups</h1>
+            <p>Design conversation loops, voice notes, and profile layouts with the authentic, minimalist aesthetic of the Threads app.</p>
+        </div>
+    </header>
+
+    <section class="tools-section" style="padding-top: 20px;">
+        <div class="tools-grid">
+            
+            <a href="threads-post.html" class="tool-card">
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.75 2C16.942 2 20.5 5.25 20.5 9.5c0 4.75-3.5 8.5-8.5 8.5-.75 0-1.5-.15-2.2-.4.4-.65.75-1.35 1-2.1.4.1.8.15 1.2.15 3.5 0 6-2.5 6-6s-2.5-6-6-6-6 2.5-6 6v.5c0 1.5.5 2.5 1.5 2.5s2-.75 2-2.5V9.5c0-1.5-.25-2.5-1.5-2.5s-2.5 1-2.5 2.5v.5c0 4.25 3.25 7.5 7.5 7.5 1.25 0 2.5-.25 3.5-.75.65 1.5 1.5 3.5 1.5 5.5 0 .5 0 1-.15 1.5-1.5 1-3.25 1.75-5 1.75C6.5 22 2 17.5 2 12S6.5 2 12 2h.75zM12 9.5c.5 0 1-.5 1-1s-.5-1-1-1-1 .5-1 1 .5 1 1 1z"/>
+                    </svg>
+                </div>
+                <h3>Thread Builder</h3>
+                <p>Create multi-level conversation chains. Supports the unique 'loop' reply lines and nested comments.</p>
+                <span class="link-text" style="color: #000000;">Launch Tool &rarr;</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge th-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                        <rect x="15" y="3" width="6" height="6" rx="1.5" stroke-width="1.5"></rect>
+                    </svg>
+                </div>
+                <h3>Profile Mockup</h3>
+                <p>Generate a full profile header with the "Instagram Badge" link, follower counts, and 'Net Worth' parody bios.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge th-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                </div>
+                <h3>Voice Post Generator</h3>
+                <p>Mockup the unique Threads audio player with dynamic waveforms and transcription text overlay.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge th-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <rect x="7" y="10" width="10" height="7" rx="1" ry="1" stroke-dasharray="2 2"></rect>
+                    </svg>
+                </div>
+                <h3>Quote Post UI</h3>
+                <p>Create the distinct 'Box-in-a-Box' aesthetic for Quote posts, perfect for meme formats and reactions.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge th-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                </div>
+                <h3>Feed Algorithm</h3>
+                <p>Simulate a post appearing on the 'For You' page with algorithmic suggestions and "Suggested for you" headers.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge th-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3>Activity Spoofer</h3>
+                <p>Fake the 'Activity' tab. Generate notifications for Verified follows, replies, and mentions.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Post Mockups. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const curtain = document.querySelector('.page-transition');
+            if(curtain) {
+                setTimeout(() => { 
+                    curtain.classList.add('exit'); 
+                    curtain.classList.remove('cover'); 
+                }, 300);
+            }
+
+            // Mobile Nav Logic
+            const toggleBtn = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (toggleBtn && navLinks) {
+                toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    toggleBtn.classList.toggle('is-open');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        toggleBtn.classList.remove('is-open');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

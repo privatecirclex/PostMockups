@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Mockup Tools | Post Mockups</title>
+    <meta name="description" content="Generate realistic Facebook posts, Messenger chats, Marketplace listings, and fake profiles. The best free tool for FB mockups.">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- FACEBOOK THEME SPECIFICS --- */
+        
+        /* The "Social Blue" Gradient */
+        .fb-grad-text {
+            background: linear-gradient(135deg, #1877F2 0%, #0d65d9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Background Gradient for Badges/Buttons */
+        .fb-grad-bg {
+            background: linear-gradient(135deg, #1877F2 0%, #0d65d9 100%);
+            color: white;
+        }
+        
+        /* Icon Fill */
+        .fb-grad-icon svg {
+            fill: url(#fbGradient);
+        }
+
+        /* Hover States for Tools */
+        .tool-card:hover {
+            border-color: #1877F2;
+            box-shadow: 0 10px 40px rgba(24, 119, 242, 0.1);
+        }
+        
+        /* Navbar Active State Override */
+        .nav-links a.active {
+            color: #1877F2;
+        }
+
+        /* Messenger Gradient for Messenger Tool Badge */
+        .badge-messenger {
+            background: linear-gradient(45deg, #00B2FF 0%, #006AFF 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="landing-page">
+
+    <div class="page-transition cover">
+        <div class="loading-content">
+            <div class="spinner" style="border-top-color: #1877F2;"></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Post <span class="highlight"> Mockups</span></a>
+        
+        <button class="mobile-toggle" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+        </button>
+
+        <div class="nav-links">
+            <a href="x-post.html">X (Twitter)</a>
+            <a href="instagram-tools.html">Instagram</a>
+            <a href="whatsapp-tools.html">WhatsApp</a>
+            <a href="facebook-tools.html" class="active fb-grad-text" style="font-weight: 800;">Facebook</a>
+        </div>
+    </nav>
+
+    <header class="hero" style="position: relative; padding: 60px 20px 40px 20px;">
+        <a href="index.html" style="position: absolute; left: 20px; top: 20px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #536471; transition: all 0.2s ease;" onmouseover="this.style.backgroundColor='rgba(0,0,0,0.05)'; this.style.transform='translateX(-3px)'" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateX(0)'">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </a>
+
+        <div class="hero-content">
+            <h1>Create <span class="fb-grad-text">Facebook</span> Mockups</h1>
+            <p>Generate authentic posts, Marketplace listings, and Messenger chats. The complete suite for Facebook content creation.</p>
+        </div>
+    </header>
+
+    <section class="tools-section" style="padding-top: 20px;">
+        <div class="tools-grid">
+            
+            <a href="facebook-generator.html" class="tool-card">
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                        <defs>
+                            <linearGradient id="fbGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1877F2" />
+                                <stop offset="100%" style="stop-color:#0d65d9" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#fbGradient)" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </div>
+                <h3>Post Generator</h3>
+                <p>Create classic posts with reaction bars (Like, Love, Haha), comment threads, and 'Shared' metrics.</p>
+                <span class="link-text" style="color: #1877F2;">Launch Tool &rarr;</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge badge-messenger" style="position: absolute; top: 20px; right: 20px;">New</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#fbGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        <path d="M12 11l-3 2 4-5-3-2 3 5z" fill="#1877F2" stroke="none"></path>
+                    </svg>
+                </div>
+                <h3>Messenger Chat</h3>
+                <p>Simulate private conversations with 'Seen' receipts, typing bubbles, and audio call headers.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge fb-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#fbGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                </div>
+                <h3>Marketplace Prank</h3>
+                <p>Generate fake listings for ridiculous items. Includes "Is this still available?" chat prompts.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge fb-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#fbGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <h3>Profile Mockup</h3>
+                <p>Full profile layout with Cover Photo, Bio, 'Friends' grid, and the 'Add Friend' button state.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge fb-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#fbGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </div>
+                <h3>Event Page</h3>
+                <p>Create fake event pages with 'Going/Interested' counts, dates, and location maps.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+            <a href="#" class="tool-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="badge fb-grad-bg" style="position: absolute; top: 20px; right: 20px;">Soon</div>
+                <div class="icon-box">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#fbGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h3>Group Admin Post</h3>
+                <p>Mockup posts with 'Admin' badges, 'Top Contributor' labels, and group-specific privacy headers.</p>
+                <span class="link-text" style="color: #536471;">Coming Soon</span>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Post Mockups. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const curtain = document.querySelector('.page-transition');
+            if(curtain) {
+                setTimeout(() => { 
+                    curtain.classList.add('exit'); 
+                    curtain.classList.remove('cover'); 
+                }, 300);
+            }
+
+            // Mobile Nav Logic
+            const toggleBtn = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (toggleBtn && navLinks) {
+                toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    toggleBtn.classList.toggle('is-open');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        toggleBtn.classList.remove('is-open');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
